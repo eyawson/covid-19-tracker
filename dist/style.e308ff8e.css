@@ -7,6 +7,9 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+h1 {
+  text-align: center;
+}
 div {
   background-color: rgba(255, 255, 255, 0.5);
   padding-left: 10px;
@@ -25,6 +28,21 @@ div {
 li,
 p {
   color: #f5f5dc;
+}
+#social {
+  text-align: center;
+  height: 150px;
+}
+#social a i {
+  padding: 15px;
+  font-size: 2rem;
+  color: #000000;
+  text-align: center;
+}
+@media only screen and (min-width: 769px) {
+  p {
+    width: 80%;
+  }
 }
 
 
