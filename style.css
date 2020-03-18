@@ -1,0 +1,27 @@
+body {
+  font-family: "Baloo Chettan 2", cursive;
+  font-size: 16px;
+  line-height: 1.5;
+  background-image: url("./images/virus.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+div {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding-left: 10px;
+}
+#dead {
+  color: #ff0000;
+}
+
+#case {
+  color: #ffd700;
+}
+
+#recovery {
+  color: #008000;
+}
+li {
+  color: #ffffff;
+}
