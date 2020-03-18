@@ -22,6 +22,7 @@ div {
 #recovery {
   color: #008000;
 }
-li {
-  color: #ffffff;
+li,
+p {
+  color: #f5f5dc;
 }
