@@ -15,22 +15,42 @@
 
 <body>
     <header>
-        <h1>Covid-19 Worldwide stats</h1>
+        <a class="menuButton"><i class="fas fa-bars"></i></a>
+        <span>
+            <h1>Covid-19 Worldwide stats</h1>
+        </span>
     </header>
-
-    <div id="case">
-        <h2>Cases: </h2>
-        <h3 id="cases"></h3>
-    </div>
-    <div id="recovery">
-        <h2>Recovered: </h2>
-        <h3 id="recovered"></h3>
-    </div>
-    <div id="dead">
-        <h2>Deaths: </h2>
-        <h3 id="deaths"></h3>
-    </div>
+    <nav>
+        <div class="hide" id="dropDown">
+            <ul>
+                <li>
+                    <a href="https://www.cdc.gov/" target="_blank">CDC Website</a>
+                </li>
+                <li>
+                    <a href="https://www.who.int/health-topics/coronavirus" target="_blank">WHO</a>
+                </li>
+                <li>
+                    <a href="https://www.worldometers.info/coronavirus/" target="_blank">More stats</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div id="case">
+            <h2>Cases: </h2>
+            <h3 id="cases"></h3>
+        </div>
+        <div id="recovery">
+            <h2>Recovered: </h2>
+            <h3 id="recovered"></h3>
+        </div>
+        <div id="dead">
+            <h2>Deaths: </h2>
+            <h3 id="deaths"></h3>
+        </div>
+    </main>
     <section id="about">
+        <h2>What is the Coronavirus?</h2>
         <p>
             Coronaviruses (CoV) are a large family of viruses that cause illness ranging from the common cold to more
             severe
@@ -63,9 +83,9 @@
             <p><a href="https://www.cdc.gov/" target="_blank">CDC Website</a></p>
             <p><a href="https://www.who.int/health-topics/coronavirus" target="_blank">WHO</a></p>
             <p><a href="https://www.worldometers.info/coronavirus/" target="_blank">More stats</a></p>
-
         </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="index.js"></script>
 </body>
 

@@ -118,25 +118,37 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"index.js":[function(require,module,exports) {
-console.log('Hello World!');
+$(document).ready(function () {
+  var $menuButton = $('.menuButton');
+  var $dropDown = $('#dropDown');
+  $menuButton.on('click', function () {
+    $dropDown.slideToggle();
+  });
+}); //console.log('Hello World!')
+
 var deaths = document.getElementById('deaths');
 var cases = document.getElementById('cases');
 var recovered = document.getElementById('recovered');
 var url = 'https://coronavirus-19-api.herokuapp.com/all';
-fetch(url).then(function (response) {
-  if (response.ok) {
-    return response.json();
-  }
 
-  throw new Error('SNAFU! Nothing returned from the fetch request!');
-}, function (networkError) {
-  console.log(networkError.message);
-}).then(function (data) {
-  //console.log(data);
-  deaths.innerHTML = data.deaths + ' or ' + (100 * data.deaths / data.cases).toFixed(2) + '%';
-  cases.innerHTML = data.cases;
-  recovered.innerHTML = data.recovered + ' or ' + (100 * data.recovered / data.cases).toFixed(2) + '%';
-});
+var getData = function getData() {
+  fetch(url).then(function (response) {
+    if (response.ok) {
+      return response.json();
+    }
+
+    throw new Error('SNAFU! Nothing returned from the fetch request!');
+  }, function (networkError) {
+    console.log(networkError.message);
+  }).then(function (data) {
+    //console.log(data);
+    deaths.innerHTML = data.deaths + ' or ' + (100 * data.deaths / data.cases).toFixed(2) + '%';
+    cases.innerHTML = data.cases;
+    recovered.innerHTML = data.recovered + ' or ' + (100 * data.recovered / data.cases).toFixed(2) + '%';
+  });
+};
+
+getData();
 },{}],"../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -165,7 +177,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50679" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54075" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
