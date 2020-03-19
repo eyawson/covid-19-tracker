@@ -49,6 +49,9 @@ h1 {
 nav {
   flex-shrink: 0;
 }
+nav div ul li {
+  list-style: none;
+}
 
 .fa-bars:active {
   transform: rotate(90deg);
@@ -85,7 +88,6 @@ a {
 li,
 p {
   color: #f5f5dc;
-  list-style: none;
 }
 
 #social {
@@ -110,5 +112,6 @@ p {
     width: 80%;
   }
 }
+
 
 /*# sourceMappingURL=/style.e308ff8e.css.map */
