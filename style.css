@@ -14,7 +14,7 @@ header {
   background-color: #d2691e;
   display: inline-flex;
   align-items: baseline;
-  padding-left: 5px;
+  padding-left: 15px;
   width: 100%;
 }
 
@@ -29,6 +29,11 @@ h1 {
   padding-top: 10px;
   margin-bottom: 0px;
   padding-bottom: 10px;
+}
+
+#dropDown ul {
+  padding-right: 20%;
+  padding-left: 20%;
 }
 
 main,
@@ -46,11 +51,27 @@ h1 {
   font-size: 1.7em;
 }
 
-nav {
+/* nav {
   flex-shrink: 0;
-}
+} */
+
 nav div ul li {
   list-style: none;
+  background-color: #d2691e61;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+nav div ul li a {
+  transition: color 1s;
+  font-size: 1.6rem;
+}
+
+nav div ul li a:hover {
+  font-weight: 800;
+  color: #d2691e;
+  transform: scale(0.6);
 }
 
 .fa-bars:active {
@@ -91,7 +112,8 @@ p {
 }
 
 #social {
-  height: 200px;
+  padding-bottom: 20px;
+  padding-top: 10px;
 }
 
 #social a i {
