@@ -119,22 +119,24 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   return newRequire;
 })({"index.js":[function(require,module,exports) {
 $(document).ready(function () {
-  var $menuButton = $('.menuButton');
-  var $dropDown = $('#dropDown');
-  $menuButton.on('click', function () {
+  var $menuButton = $(".menuButton");
+  var $dropDown = $("#dropDown");
+  var $warning = $(".warn");
+  $menuButton.on("click", function () {
     $dropDown.slideToggle();
+    $warning.fadeOut(400);
   });
 }); //console.log('Hello World!')
 
-var deaths = document.getElementById('deaths');
-var cases = document.getElementById('cases');
-var recovered = document.getElementById('recovered');
-var state = document.getElementById('country');
-var stateB = document.getElementById('country2');
-var p = document.createElement('p');
-var gh = document.createElement('p');
-var url = 'https://coronavirus-19-api.herokuapp.com/all';
-var countryUrl = 'https://coronavirus-19-api.herokuapp.com/countries/';
+var deaths = document.getElementById("deaths");
+var cases = document.getElementById("cases");
+var recovered = document.getElementById("recovered");
+var state = document.getElementById("country");
+var stateB = document.getElementById("country2");
+var p = document.createElement("p");
+var gh = document.createElement("p");
+var url = "https://coronavirus-19-api.herokuapp.com/all";
+var countryUrl = "https://coronavirus-19-api.herokuapp.com/countries/";
 var country;
 
 var getData = function getData() {
@@ -143,33 +145,33 @@ var getData = function getData() {
       return response.json();
     }
 
-    throw new Error('SNAFU! Nothing returned from the fetch request!');
+    throw new Error("SNAFU! Nothing returned from the fetch request!");
   }, function (networkError) {
     console.log(networkError.message);
   }).then(function (data) {
     //console.log(data);
-    deaths.innerHTML = data.deaths + ' or ' + (100 * data.deaths / data.cases).toFixed(2) + '%';
+    deaths.innerHTML = data.deaths + " or " + (100 * data.deaths / data.cases).toFixed(2) + "%";
     cases.innerHTML = data.cases;
-    recovered.innerHTML = data.recovered + ' or ' + (100 * data.recovered / data.cases).toFixed(2) + '%';
+    recovered.innerHTML = data.recovered + " or " + (100 * data.recovered / data.cases).toFixed(2) + "%";
   });
 };
 
 getData();
 
 var getUsaData = function getUsaData() {
-  country = 'USA';
+  country = "USA";
   var national = countryUrl + country;
   fetch(national).then(function (response) {
     if (response.ok) {
       return response.json();
     }
 
-    throw new Error('SNAFU! Nothing returned from the fetch request!');
+    throw new Error("SNAFU! Nothing returned from the fetch request!");
   }, function (networkError) {
     console.log(networkError.message);
   }).then(function (countryData) {
     //console.log(countryData);
-    p.innerHTML = countryData.country + ': ' + 'Total: ' + countryData.cases + ' | ' + 'Deaths: ' + countryData.deaths + ' | ' + 'New: ' + countryData.todayCases;
+    p.innerHTML = countryData.country + ": " + "Total: " + countryData.cases + " | " + "Deaths: " + countryData.deaths + " | " + "New: " + countryData.todayCases;
     state.appendChild(p);
   });
 };
@@ -177,19 +179,19 @@ var getUsaData = function getUsaData() {
 getUsaData();
 
 var getGhanaData = function getGhanaData() {
-  country = 'Ghana';
+  country = "Ghana";
   var national = countryUrl + country;
   fetch(national).then(function (response) {
     if (response.ok) {
       return response.json();
     }
 
-    throw new Error('SNAFU! Nothing returned from the fetch request!');
+    throw new Error("SNAFU! Nothing returned from the fetch request!");
   }, function (networkError) {
     console.log(networkError.message);
   }).then(function (ghanaData) {
-    console.log(ghanaData);
-    gh.innerHTML = ghanaData.country + ': ' + 'Total: ' + ghanaData.cases + ' | ' + 'Deaths: ' + ghanaData.deaths + ' | ' + 'New: ' + ghanaData.todayCases;
+    //console.log(ghanaData);
+    gh.innerHTML = ghanaData.country + ": " + "Total: " + ghanaData.cases + " | " + "Deaths: " + ghanaData.deaths + " | " + "New: " + ghanaData.todayCases;
     stateB.appendChild(gh);
   });
 };
@@ -223,7 +225,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52253" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60094" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
