@@ -129,7 +129,13 @@ $(document).ready(function () {
 var deaths = document.getElementById('deaths');
 var cases = document.getElementById('cases');
 var recovered = document.getElementById('recovered');
+var state = document.getElementById('country');
+var stateB = document.getElementById('country2');
+var p = document.createElement('p');
+var gh = document.createElement('p');
 var url = 'https://coronavirus-19-api.herokuapp.com/all';
+var countryUrl = 'https://coronavirus-19-api.herokuapp.com/countries/';
+var country;
 
 var getData = function getData() {
   fetch(url).then(function (response) {
@@ -149,6 +155,46 @@ var getData = function getData() {
 };
 
 getData();
+
+var getUsaData = function getUsaData() {
+  country = 'USA';
+  var national = countryUrl + country;
+  fetch(national).then(function (response) {
+    if (response.ok) {
+      return response.json();
+    }
+
+    throw new Error('SNAFU! Nothing returned from the fetch request!');
+  }, function (networkError) {
+    console.log(networkError.message);
+  }).then(function (countryData) {
+    //console.log(countryData);
+    p.innerHTML = countryData.country + ': ' + 'Total: ' + countryData.cases + ' | ' + 'Deaths: ' + countryData.deaths + ' | ' + 'New: ' + countryData.todayCases;
+    state.appendChild(p);
+  });
+};
+
+getUsaData();
+
+var getGhanaData = function getGhanaData() {
+  country = 'Ghana';
+  var national = countryUrl + country;
+  fetch(national).then(function (response) {
+    if (response.ok) {
+      return response.json();
+    }
+
+    throw new Error('SNAFU! Nothing returned from the fetch request!');
+  }, function (networkError) {
+    console.log(networkError.message);
+  }).then(function (ghanaData) {
+    console.log(ghanaData);
+    gh.innerHTML = ghanaData.country + ': ' + 'Total: ' + ghanaData.cases + ' | ' + 'Deaths: ' + ghanaData.deaths + ' | ' + 'New: ' + ghanaData.todayCases;
+    stateB.appendChild(gh);
+  });
+};
+
+getGhanaData();
 },{}],"../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -177,7 +223,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55496" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52253" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

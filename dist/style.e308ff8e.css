@@ -84,6 +84,8 @@ nav div ul li a:hover {
 #case,
 #recovery,
 #dead,
+#country,
+#country2,
 footer {
   background-color: rgba(255, 255, 255, 0.5);
   padding-left: 10px;
@@ -99,6 +101,12 @@ footer {
 
 #recovery {
   color: #008000;
+}
+
+#country p,
+#country2 p {
+  color: #008000;
+  font-weight: 600;
 }
 
 .hide {
