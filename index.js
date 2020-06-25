@@ -18,6 +18,19 @@ let stateB = document.getElementById("country2");
 let p = document.createElement("p");
 let gh = document.createElement("p");
 
+const getCountry = () => {
+  const getResults = () => {
+    let query = document.getElementById("countrySearch").value;
+    console.log(query);
+    let result = document.getElementById("results");
+    result.innerHTML = query;
+  };
+
+  //Build out search feature later
+  document.getElementById("search").addEventListener("click", getResults);
+};
+getCountry();
+
 const url = "https://coronavirus-19-api.herokuapp.com/all";
 const countryUrl = "https://coronavirus-19-api.herokuapp.com/countries/";
 let country;

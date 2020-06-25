@@ -135,6 +135,20 @@ var state = document.getElementById("country");
 var stateB = document.getElementById("country2");
 var p = document.createElement("p");
 var gh = document.createElement("p");
+
+var getCountry = function getCountry() {
+  var getResults = function getResults() {
+    var query = document.getElementById("countrySearch").value;
+    console.log(query);
+    var result = document.getElementById("results");
+    result.innerHTML = query;
+  }; //Build out search feature later
+
+
+  document.getElementById("search").addEventListener("click", getResults);
+};
+
+getCountry();
 var url = "https://coronavirus-19-api.herokuapp.com/all";
 var countryUrl = "https://coronavirus-19-api.herokuapp.com/countries/";
 var country;
@@ -225,7 +239,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55323" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57894" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

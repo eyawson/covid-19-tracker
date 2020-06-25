@@ -39,6 +39,10 @@ h1 {
   padding-left: 20%;
 }
 
+.hide {
+  display: none;
+}
+
 .warn {
   text-align: center;
   font-size: 0.7em;
@@ -58,7 +62,7 @@ li a {
 
 .fa-bars,
 h1 {
-  font-size: 1.7em;
+  font-size: 1.5em;
 }
 
 /* nav {
@@ -75,7 +79,7 @@ nav div ul li {
 
 nav div ul li a {
   transition: color 1s;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
 }
 
 nav div ul li a:hover {
@@ -116,8 +120,8 @@ footer {
   font-weight: 600;
 }
 
-.hide {
-  display: none;
+span {
+  font-size: 1.3em;
 }
 
 a {
@@ -157,7 +161,6 @@ footer p {
 
 footer p a {
   color: #000000;
-
 }
 
 @media only screen and (max-width: 769px) {
