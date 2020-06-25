@@ -17,7 +17,46 @@ header {
   width: 100%;
 }
 
-header a {
+button {
+  background: #000000;
+  color: #d2691e;
+  border-radius: 8px;
+  transition-duration: 0.4s;
+  width: 80px;
+  height: 30px;
+  margin-top: 5px;
+  border-color: transparent;
+  font-size: 0.9em;
+}
+
+button:hover {
+  background-color: #d2691e;
+  color: white;
+}
+
+input {
+  width: 40%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+input:focus {
+  color: #d2691e;
+}
+
+#results {
+  margin-top: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#results p {
+  color: #000000;
+  font-weight: 600;
+}
+
+
+.menuButton {
   padding-left: 15px;
 }
 
@@ -45,9 +84,14 @@ h1 {
 
 .warn {
   text-align: center;
-  font-size: 0.7em;
+  font-size: 0.9em;
   margin-top: 0px;
   color: black;
+}
+
+form {
+  text-align: center;
+  padding-top: 15px;
 }
 
 main,
@@ -62,7 +106,7 @@ li a {
 
 .fa-bars,
 h1 {
-  font-size: 1.5em;
+  font-size: 7vw;
 }
 
 /* nav {
@@ -92,6 +136,7 @@ nav div ul li a:hover {
   transform: rotate(90deg);
 }
 
+#results,
 #case,
 #recovery,
 #dead,
@@ -151,7 +196,6 @@ footer {
 }
 
 footer p {
-  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 5px;
   padding-top: 5px;
   padding-bottom: 5px;
