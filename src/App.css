@@ -217,4 +217,9 @@ footer p a {
   p {
     width: 80%;
   }
+
+  .fa-bars,
+  h1 {
+    font-size: 5vw;
+  }
 }
