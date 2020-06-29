@@ -71,6 +71,7 @@ const Search = () => {
         <section id="results">
           {/*  TODO: Change to a table */}
           <p>Total Cases: {search.cases}</p>
+          <p>Total Tests: {search.totalTests}</p>
           <p>New: {search.todayCases}</p>
           <p>Recovered: {search.recovered}</p>
           <p>Active: {search.active}</p>

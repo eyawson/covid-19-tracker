@@ -27,7 +27,7 @@ const Main = () => {
         <div id="recovery">
           <h2>Recovered:</h2>
           <h3 id="recovered">
-            {data.deaths +
+            {data.recovered +
               " or " +
               ((100 * data.deaths) / data.cases).toFixed(2) +
               "%"}
@@ -36,7 +36,7 @@ const Main = () => {
         <div id="dead">
           <h2>Deaths:</h2>
           <h3 id="deaths">
-            {data.recovered +
+            {data.deaths +
               " or " +
               ((100 * data.recovered) / data.cases).toFixed(2) +
               "%"}
