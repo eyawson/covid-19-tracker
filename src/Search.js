@@ -70,13 +70,13 @@ const Search = () => {
       ) : (
         <section id="results">
           {/*  TODO: Change to a table */}
-          <p>Total Cases: {search.cases}</p>
-          <p>Total Tests: {search.totalTests}</p>
-          <p>New: {search.todayCases}</p>
-          <p>Recovered: {search.recovered}</p>
-          <p>Active: {search.active}</p>
-          <p>Critical: {search.critical}</p>
-          <p>Deaths: {search.deaths}</p>
+          <p className="case">Total Cases: {search.cases}</p>
+          <p className="test">Total Tests: {search.totalTests}</p>
+          <p className="newCase">New: {search.todayCases}</p>
+          <p className="recovered">Recovered: {search.recovered}</p>
+          <p className="active">Active: {search.active}</p>
+          <p className="critical">Critical: {search.critical}</p>
+          <p className="deathTotal">Deaths: {search.deaths}</p>
         </section>
       )}
     </Fragment>

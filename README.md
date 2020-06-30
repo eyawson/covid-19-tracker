@@ -12,12 +12,6 @@ There is a lot more to implement
 - making searchable database sorted by nation
   This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## optional included build/deploy scripts
-
-- "predeploy": "npm run build",
-- "deploy": "aws s3 sync build/ s3://YOUR_S3_DEPLOY_BUCKET_NAME --delete",
-- "postdeploy": "aws cloudfront create-invalidation --distribution-id YOUR*CF_DISTRIBUTION_ID --paths '/*' && aws cloudfront create-invalidation --distribution-id YOUR*WWW_CF_DISTRIBUTION_ID --paths '/*'",
-
 ## Available Scripts
 
 In the project directory, you can run:

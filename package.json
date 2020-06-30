@@ -3,9 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@testing-library/cypress": "^6.0.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "axe-core": "^3.5.5",
+    "eslint-plugin-cypress": "^2.11.1",
     "jquery": "^3.5.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -13,11 +16,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "cypress": "cypress open",
-    "test:cypress": "cypress run",
+    "cy:run": "cypress open",
+    "test:e2e": "start-server-and-test :3000 cy:run",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "predeploy": "npm run build",
+    "predeploy": "yarn run build",
     "deploy": "aws s3 sync build/ s3://cov-19 --delete",
     "postdeploy": "aws cloudfront create-invalidation --distribution-id EAX9YUBTSGJIY --paths '/*'",
     "eject": "react-scripts eject"
@@ -41,6 +44,8 @@
   "author": "eyawson <ebow.yawson@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "cypress": "^4.9.0"
+    "cypress": "^4.9.0",
+    "cypress-axe": "^0.8.1",
+    "start-server-and-test": "^1.11.0"
   }
 }
