@@ -17,11 +17,11 @@ jobs:
           command: |
             yarn install
       - print_pipeline_id
-      - run: yarn build > ~/
-      - persist_to_workspace:
-          root: ~/
-          paths:
-            - build
+      # - run: yarn build > ~/
+      # - persist_to_workspace:
+      #     root: ~/
+      #     paths:
+      #       - build
   test:
     docker:
       - image: circleci/node:13.8.0
@@ -34,8 +34,8 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - attach_workspace:
-          at: ~/
+      # - attach_workspace:
+      #     at: ~/
       - run: yarn audit
 
 workflows:
