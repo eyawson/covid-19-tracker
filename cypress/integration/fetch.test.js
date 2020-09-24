@@ -3,7 +3,11 @@ describe("failed fetch test", () => {
     cy.visit("/");
     cy.server();
     cy.fixture("covid.json").as("apiResponse");
-    cy.route("GET", "**/countries/**", "@apiResponse").as("getCountry");
+    cy.route(
+      "GET",
+      "https://coronavirus-19-api.herokuapp.com/countries/",
+      "@apiResponse"
+    );
 
     cy.get("form")
 
@@ -19,6 +23,6 @@ describe("failed fetch test", () => {
       .should("have.value", "Ghana");
     cy.get("button").should("have.text", "Search").click();
 
-    cy.wait("@getCountry");
+    cy.wait("@apiResponse");
   });
 });
