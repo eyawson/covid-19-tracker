@@ -18,6 +18,10 @@ jobs:
             yarn install
       - print_pipeline_id
       - run: yarn build > ~/
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - ~/build
   test:
     docker:
       - image: circleci/node:13.8.0
