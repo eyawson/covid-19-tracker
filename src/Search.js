@@ -42,7 +42,7 @@ const Search = () => {
     () => {
       fetchData();
     },
-    [url] /* I seem not to need this, wh? */
+    [url]
   );
 
   return (
@@ -68,17 +68,17 @@ const Search = () => {
       {isLoading ? (
         <p>Loading...</p>
       ) : (
-        <section id="results">
-          {/*  TODO: Change to a table */}
-          <p className="case">Total Cases: {search.cases}</p>
-          <p className="test">Total Tests: {search.totalTests}</p>
-          <p className="newCase">New: {search.todayCases}</p>
-          <p className="recovered">Recovered: {search.recovered}</p>
-          <p className="active">Active: {search.active}</p>
-          <p className="critical">Critical: {search.critical}</p>
-          <p className="deathTotal">Deaths: {search.deaths}</p>
-        </section>
-      )}
+          <section id="results">
+            {/*  TODO: Change to a table */}
+            <p className="case">Total Cases: {search.cases}</p>
+            <p className="test">Total Tests: {search.totalTests}</p>
+            <p className="newCase">New: {search.todayCases}</p>
+            <p className="recovered">Recovered: {search.recovered}</p>
+            <p className="active">Active: {search.active}</p>
+            <p className="critical">Critical: {search.critical}</p>
+            <p className="deathTotal">Deaths: {search.deaths}</p>
+          </section>
+        )}
     </Fragment>
   );
 };

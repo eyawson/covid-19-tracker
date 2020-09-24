@@ -29,7 +29,7 @@ const Main = () => {
           <h3 id="recovered">
             {data.recovered +
               " or " +
-              ((100 * data.deaths) / data.cases).toFixed(2) +
+              ((100 * data.recovered) / data.cases).toFixed(2) +
               "%"}
           </h3>
         </div>
@@ -38,7 +38,7 @@ const Main = () => {
           <h3 id="deaths">
             {data.deaths +
               " or " +
-              ((100 * data.recovered) / data.cases).toFixed(2) +
+              ((100 * data.deaths) / data.cases).toFixed(2) +
               "%"}
           </h3>
         </div>
