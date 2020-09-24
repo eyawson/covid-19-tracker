@@ -21,7 +21,7 @@ jobs:
       - persist_to_workspace:
           root: ~/
           paths:
-            - ~/build
+            - build
   test:
     docker:
       - image: circleci/node:13.8.0
