@@ -37,7 +37,7 @@ jobs:
       - run_yarn_install
       - run:
           command: |
-            yarn install --save-dev eslint eslint-loader babel-loader babel-eslint eslint-plugin-react
+            yarn add --save-dev eslint eslint-loader babel-loader babel-eslint eslint-plugin-react
             eslint
       # - run: yarn test:e2e
   analyze:
