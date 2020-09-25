@@ -35,7 +35,11 @@ jobs:
       # - attach_workspace:
       #     at: ~/
       - run_yarn_install
-      - run: yarn test:e2e
+      - run:
+          command: |
+            yarn install --save-dev eslint eslint-loader babel-loader babel-eslint eslint-plugin-react
+            eslint
+      # - run: yarn test:e2e
   analyze:
     docker:
       - image: circleci/node:13.8.0
